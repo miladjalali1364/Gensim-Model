@@ -16,3 +16,9 @@ df2 = data_frame1.apply(lambda x: ','.join(x.astype(str)), axis=1)
 
 # Store them in a pandas dataframe
 data_frame_clean = pd.DataFrame({'clean' : df2})
+
+# Create the list of list format of the custom corpus for gensim modeling
+sent = [row.split(',') for row in data_frame_clean['clean']]
+
+# show the example of list of list format of the custom corpus for gensim modeling
+print(sent[:2])
