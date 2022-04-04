@@ -13,3 +13,6 @@ data_frame1 = data_frame[['Engine Fuel Type','Transmission Type', 'Driven_Wheels
 
 # For each row, combine all the columns into one column
 df2 = data_frame1.apply(lambda x: ','.join(x.astype(str)), axis=1)
+
+# Store them in a pandas dataframe
+data_frame_clean = pd.DataFrame({'clean' : df2})
