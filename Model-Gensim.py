@@ -27,3 +27,6 @@ print(sent[:2])
 model = Word2Vec(sent, min_count=1,vector_size=100,workers=3, window =3, sg = 1)
 print(model)
 print(model.wv['Toyota Camry'])
+
+# Compute Similarities
+print(model.wv.similarity('Porsche 718 Cayman', 'Nissan Van'))
