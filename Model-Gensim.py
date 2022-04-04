@@ -1,6 +1,6 @@
 
 import pandas as pd
-from gensim.models import word2vec
+from gensim.models import Word2Vec
 
 data_frame = pd.read_csv("data.csv",index_col=False)
 print(data_frame.head(5))
@@ -22,3 +22,8 @@ sent = [row.split(',') for row in data_frame_clean['clean']]
 
 # show the example of list of list format of the custom corpus for gensim modeling
 print(sent[:2])
+
+#Genism word2vec Model Training
+model = Word2Vec(sent, min_count=1,vector_size=100,workers=3, window =3, sg = 1)
+print(model)
+print(model.wv['Toyota Camry'])
